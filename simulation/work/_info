@@ -1,0 +1,36 @@
+m255
+K4
+z2
+!s11f vlog 2022.3 2022.07, Jul 18 2022
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/mdesomma/Documents/lab1
+vlab1SVSim
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1725337124
+!i10b 1
+!s100 OQ4l^]Bgf]z[@PS<]BDf83
+I0WPfZHAA>1l3:dAg2i>DN1
+S1
+dC:/Users/mdesomma/Documents/lab1/simulation
+w1725336457
+8C:\Users\mdesomma\Documents\lab1\simulation\lab1SVSim.sv
+FC:\Users\mdesomma\Documents\lab1\simulation\lab1SVSim.sv
+!i122 2
+L0 1 51
+VDg1SIo80bB@j0V0VzS_@n1
+OP;L;2022.3;75
+r1
+!s85 0
+31
+!s108 1725337124.000000
+!s107 C:\Users\mdesomma\Documents\lab1\simulation\lab1SVSim.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:\Users\mdesomma\Documents\lab1\simulation\lab1SVSim.sv|
+!i113 1
+o-work work -sv
+tCvgOpt 0
+nlab1@s@v@sim
