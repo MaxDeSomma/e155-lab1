@@ -1,5 +1,5 @@
 module lab1SVSim(
-	input 	logic [3:0] s,
+	input 	logic [3:0] s, input logic clk,
 	output 	logic [2:0] led, output logic [6:0] seg
 );
 
@@ -10,10 +10,10 @@ module lab1SVSim(
 	logic int_osc;
 	logic ledOn = 0;
 	// Internal high-speed oscillator
-	HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
+	// HSOSC hf_osc (.CLKHFPU(1'b1), .CLKHFEN(1'b1), .CLKHF(int_osc));
 	
 		// Simple clock divider
-	always_ff @(posedge int_osc)
+	always_ff @(posedge clk)
 		begin
 			counter <= counter + 1;
 			if(counter == 10241637)
@@ -26,6 +26,94 @@ module lab1SVSim(
 		
 	assign led[2] = ledOn;
 	
-	sevenSegment s1 (s, seg);
+	always_comb begin
+		case(s)
+			4'h0: seg = 7'b1000000;
+			4'h1: seg = 7'b1110011;
+			4'h2: seg = 7'b0100100;
+			4'h3: seg = 7'b0100001;
+			4'h4: seg = 7'b0010011;
+			4'h5: seg = 7'b0001001;
+			4'h6: seg = 7'b0001000;
+			4'h7: seg = 7'b1100011;
+			4'h8: seg = 7'b0000000;
+			4'h9: seg = 7'b0000001;
+			4'ha: seg = 7'b0000010;
+			4'hb: seg = 7'b0011000;
+			4'hc: seg = 7'b1001100;
+			4'hd: seg = 7'b0110000;
+			4'he: seg = 7'b0001100;
+			4'hf: seg = 7'b0001110;
 
+		endcase
+	end
+
+endmodule
+
+`timescale 1ns/1ns
+`default_nettype none
+`define N_TV 16
+
+module lab1_tb();
+ // Set up test signals
+ logic clk, reset;
+ logic [3:0] s;
+ logic [2:0] led, led_expected;
+ logic [6:0] seg, seg_expected;
+ logic [31:0] vectornum, errors;
+ logic [10:0] testvectors[10000:0]; // Vectors of format s[3:0]_seg[6:0]
+
+ // Instantiate the device under test
+ lab1SVSim dut(.s(s), .clk(clk), .led(led), .seg(seg));
+
+ // Generate clock signal with a period of 10 timesteps.
+ always
+   begin
+     clk = 1; #5;
+     clk = 0; #5;
+   end
+
+  
+ // At the start of the simulation:
+ //  - Load the testvectors
+ //  - Pulse the reset line (if applicable)
+ initial
+   begin
+     $readmemb("lab1_testbench.tv", testvectors, 0, `N_TV - 1);
+     vectornum = 0; errors = 0;
+     reset = 1; #27; reset = 0;
+   end
+  // Apply test vector on the rising edge of clk
+ always @(posedge clk)
+   begin
+       #1; {s, led_expected, seg_expected} = testvectors[vectornum];
+   end
+  initial
+ begin
+   // Create dumpfile for signals
+   $dumpfile("lab1_tb.vcd");
+   $dumpvars(0, lab1_tb);
+ end
+  // Check results on the falling edge of clk
+ always @(negedge clk)
+   begin
+     if (~reset) // skip during reset
+       begin
+         if (led != led_expected || seg != seg_expected)
+           begin
+             $display("Error: inputs: s=%b",s);
+             $display(" outputs: led=%b (%b expected), seg=%b (%b expected)", led, led_expected, seg, seg_expected);
+             errors = errors + 1;
+           end
+
+      
+       vectornum = vectornum + 1;
+      
+       if (testvectors[vectornum] === 11'bx)
+         begin
+           $display("%d tests completed with %d errors.", vectornum, errors);
+           $finish;
+         end
+     end
+   end
 endmodule

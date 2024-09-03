@@ -101,3 +101,71 @@ force s 4b'1111
 # 
 force s 4'b1111
 run 100
+# Compile of lab1SVSim.sv failed with 5 errors.
+# Compile of lab1SVSim.sv was successful.
+vsim -gui work.lab1_tb
+# End time: 10:14:32 on Sep 03,2024, Elapsed time: 12:55:42
+# Errors: 0, Warnings: 3
+# vsim -gui work.lab1_tb 
+# Start time: 10:14:32 on Sep 03,2024
+# Loading sv_std.std
+# Loading work.lab1_tb
+# ** Error: (vsim-3033) Instantiation of 'fulladder' failed. The design unit was not found.
+#    Time: 0 ns  Iteration: 0  Instance: /lab1_tb File: C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv Line: 67
+#         Searched libraries:
+#             C:/Users/mdesomma/Documents/lab1/simulation/work
+# Error loading design
+# End time: 10:14:40 on Sep 03,2024, Elapsed time: 0:00:08
+# Errors: 1, Warnings: 1
+# Compile of lab1SVSim.sv was successful.
+vsim -gui work.lab1_tb
+# vsim -gui work.lab1_tb 
+# Start time: 10:15:47 on Sep 03,2024
+# Loading sv_std.std
+# Loading work.lab1_tb
+# Loading work.lab1SVSim
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 4, found 3.
+#    Time: 0 ns  Iteration: 0  Instance: /lab1_tb/dut File: C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv Line: 67
+# ** Error: (vsim-3063) Port 'Led' not found in the connected module (2nd connection).
+#    Time: 0 ns  Iteration: 0  Instance: /lab1_tb/dut File: C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv Line: 67
+# ** Error: (vsim-3063) Port 'Seg' not found in the connected module (3rd connection).
+#    Time: 0 ns  Iteration: 0  Instance: /lab1_tb/dut File: C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv Line: 67
+# ** Warning: (vsim-3722) C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv(67): [TFMPC] - Missing connection for port 'clk'.
+# ** Warning: (vsim-3722) C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv(67): [TFMPC] - Missing connection for port 'led'.
+# ** Warning: (vsim-3722) C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv(67): [TFMPC] - Missing connection for port 'seg'.
+# Error loading design
+# End time: 10:15:55 on Sep 03,2024, Elapsed time: 0:00:08
+# Errors: 2, Warnings: 6
+# Compile of lab1SVSim.sv was successful.
+vsim -gui work.lab1_tb
+# vsim -gui work.lab1_tb 
+# Start time: 10:17:22 on Sep 03,2024
+# Loading sv_std.std
+# Loading work.lab1_tb
+# Loading work.lab1SVSim
+# ** Error: (vsim-3063) Port 'S' not found in the connected module (1st connection).
+#    Time: 0 ns  Iteration: 0  Instance: /lab1_tb/dut File: C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv Line: 67
+# ** Error: (vsim-3063) Port 'Clk' not found in the connected module (2nd connection).
+#    Time: 0 ns  Iteration: 0  Instance: /lab1_tb/dut File: C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv Line: 67
+# ** Error: (vsim-3063) Port 'Led' not found in the connected module (3rd connection).
+#    Time: 0 ns  Iteration: 0  Instance: /lab1_tb/dut File: C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv Line: 67
+# ** Error: (vsim-3063) Port 'Seg' not found in the connected module (4th connection).
+#    Time: 0 ns  Iteration: 0  Instance: /lab1_tb/dut File: C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv Line: 67
+# Error loading design
+# End time: 10:17:30 on Sep 03,2024, Elapsed time: 0:00:08
+# Errors: 4, Warnings: 2
+# Compile of lab1SVSim.sv was successful.
+vsim -gui work.lab1_tb
+# vsim -gui work.lab1_tb 
+# Start time: 10:18:04 on Sep 03,2024
+# Loading sv_std.std
+# Loading work.lab1_tb
+# Loading work.lab1SVSim
+run 500
+# ** Warning: (vsim-PLI-3409) Illegal binary digit ';' in data on line 9 of file "lab1_testbench.tv".    : C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv(82)
+#    Time: 0 ns  Iteration: 0  Instance: /lab1_tb
+#          1 tests completed with          0 errors.
+# ** Note: $finish    : C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv(115)
+#    Time: 35 ns  Iteration: 1  Instance: /lab1_tb
+# End time: 10:18:40 on Sep 03,2024, Elapsed time: 0:00:36
+# Errors: 0, Warnings: 1
