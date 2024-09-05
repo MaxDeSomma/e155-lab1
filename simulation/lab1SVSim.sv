@@ -1,3 +1,10 @@
+// lab1SVSim.sv
+// Max De Somma
+// mdesomma@g.hmc.edu
+// 9/3/24
+
+// This is a testbench simulating the seven segment display and onboard LEDs
+// [3:0]s, [2:0]led, [6:0]segment
 module lab1SVSim(
 	input 	logic [3:0] s, input logic clk,
 	output 	logic [2:0] led, output logic [6:0] seg
@@ -61,7 +68,7 @@ module lab1_tb();
  logic [2:0] led, led_expected;
  logic [6:0] seg, seg_expected;
  logic [31:0] vectornum, errors;
- logic [15:0] testvectors[10000:0]; // Vectors of format s[3:0]_seg[6:0]
+ logic [13:0] testvectors[10000:0]; // Vectors of format s[3:0]_seg[6:0]
 
  // Instantiate the device under test
  lab1SVSim dut(.s(s), .clk(clk), .led(led), .seg(seg));
@@ -109,7 +116,7 @@ module lab1_tb();
       
        vectornum = vectornum + 1;
       
-       if (testvectors[vectornum] === 11'bx)
+       if (testvectors[vectornum] === 14'bx)
          begin
            $display("%d tests completed with %d errors.", vectornum, errors);
            $finish;

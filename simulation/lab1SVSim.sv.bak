@@ -52,7 +52,7 @@ endmodule
 
 `timescale 1ns/1ns
 `default_nettype none
-`define N_TV 16
+`define N_TV 14
 
 module lab1_tb();
  // Set up test signals
@@ -109,7 +109,7 @@ module lab1_tb();
       
        vectornum = vectornum + 1;
       
-       if (testvectors[vectornum] === 11'bx)
+       if (testvectors[vectornum] === 13'bx)
          begin
            $display("%d tests completed with %d errors.", vectornum, errors);
            $finish;
