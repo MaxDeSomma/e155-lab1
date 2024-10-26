@@ -11,42 +11,42 @@ cModel Technology
 dC:/Users/mdesomma/Documents/lab1
 vlab1_tb
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1725426755
+Z1 !s110 1725691515
 !i10b 1
-!s100 ;M[LRbA09S9z;Sc=2>9G:3
-I30IJY1`[m82SiimXlDR972
+!s100 j^70;9URmzDh[a78cK9Ge2
+ICgDL`jYjFo70ckPe167TK3
 S1
 Z2 dC:/Users/mdesomma/Documents/lab1/simulation
-Z3 w1725426752
+Z3 w1725556228
 Z4 8C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv
 Z5 FC:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv
-!i122 20
-L0 57 63
+!i122 22
+L0 64 63
 Z6 VDg1SIo80bB@j0V0VzS_@n1
 Z7 OT;L;2021.4;73
 r1
 !s85 0
 31
-Z8 !s108 1725426755.000000
+Z8 !s108 1725691515.000000
 !s107 C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv|
-Z9 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv|
+Z9 !s90 -reportprogress|300|-work|work|C:/Users/mdesomma/Documents/lab1/simulation/lab1SVSim.sv|
 !s101 -O0
 !i113 1
-Z10 o-work work -sv -O0
+Z10 o-work work -O0
 Z11 tCvgOpt 0
 vlab1SVSim
 R0
 R1
 !i10b 1
-!s100 OQ4l^]Bgf]z[@PS<]BDf83
-IP9]Kb:Y`mS]A4COdDEmhc3
+!s100 9f`m3A<D4Jh3_mTI@W;F81
+ILUKeEoj4i<;RcU0U>^N5M0
 S1
 R2
 R3
 R4
 R5
-!i122 20
-L0 1 51
+!i122 22
+L0 8 51
 R6
 R7
 r1
